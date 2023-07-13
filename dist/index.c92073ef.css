@@ -1,0 +1,278 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@500&family=Open+Sans&display=swap";
+body {
+  background-color: #fcfbfb;
+  margin: 0;
+  padding: 0;
+  font-family: Open Sans, sans-serif;
+  font-size: 100%;
+  text-decoration: none;
+}
+
+h1, h2 {
+  margin: 0;
+  font-family: Noto Serif Georgian, serif;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 15px;
+}
+
+#nav_link a {
+  color: #fff;
+  padding-inline: 20px;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #fff;
+  background-color: #023047;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+header #logo_link {
+  pointer-events: none;
+}
+
+header #family-nav a {
+  color: #023047;
+}
+
+header #family-nav a:hover {
+  background-color: #ff0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.logo {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+}
+
+header {
+  color: #fff;
+  grid-template-columns: 150px auto;
+  display: grid;
+}
+
+#nav_link {
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  font-weight: 500;
+  display: flex;
+}
+
+#search_box {
+  border: 0 #fff;
+  border-radius: 10px;
+  height: 20px;
+  padding: 20px;
+}
+
+#hero {
+  grid-template-columns: 1fr 3fr 1fr;
+  margin-top: -100px;
+  font-size: 30px;
+  display: grid;
+}
+
+#hero__msg h4, #hero__msg p, #hero__student-msg h4, #hero__student-msg p {
+  font-size: 20px;
+  font-weight: 100;
+  font-style: i;
+}
+
+#hero__box {
+  z-index: -1;
+  grid-area: 1 / 1 / 3 / 4;
+}
+
+#hero__box img {
+  width: 100%;
+}
+
+#hero .hero__family img {
+  margin-top: -620px;
+}
+
+#hero__msg, #hero__student-msg, #hero__family-msg {
+  color: #ff0;
+  text-align: center;
+  font-style: unset;
+  grid-area: 1 / 2 / 2 / 3;
+  justify-items: center;
+  margin-top: 200px;
+}
+
+#hero__student-msg {
+  color: #000;
+  grid-row: 2;
+  margin-bottom: 20px;
+}
+
+#hero__student-msg h4 {
+  color: #ff0;
+  font-style: italic;
+}
+
+#hero__family-msg {
+  color: #ff0;
+  grid-row: 2;
+  margin-bottom: 55%;
+}
+
+#hero__family-msg h4 {
+  font-size: 20px;
+  font-style: italic;
+}
+
+#hero__family-msg h1 {
+  font-size: 40px;
+}
+
+.book {
+  color: #fff;
+  background-color: #023047;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+#card {
+  text-align: justify;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 30px;
+  display: grid;
+}
+
+.card-img {
+  border: 5px solid #ff0;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.individual-card p, .school-card p {
+  border-right: 3px solid #9d0208;
+  padding-right: 30px;
+}
+
+#about_us h2 {
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  display: grid;
+}
+
+#student_hero-box {
+  z-index: -1;
+  grid-area: 1 / 1 / 3 / 4;
+}
+
+#student_hero-box img {
+  width: 100%;
+}
+
+#main-aside {
+  grid-template-areas: "main main main main main main main main main main main main aside";
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+#main-aside main {
+  text-align: justify;
+  grid-area: main;
+  width: 80%;
+}
+
+#main-aside aside {
+  grid-area: aside;
+  width: 20%;
+  display: flex;
+}
+
+#main-aside aside form input, #main-aside aside form button, #main-aside aside form textarea {
+  width: 300px;
+  margin: 10px 0;
+}
+
+#main-aside aside form input {
+  color: #023047;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #023047;
+  height: 40px;
+}
+
+#main-aside aside form textarea {
+  border: 2px solid #023047;
+  border-radius: 7px;
+}
+
+#main-aside aside form button {
+  color: #fff;
+  background: #023047;
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+}
+
+#main-aside .home-grid #img-grid {
+  width: 40%;
+}
+
+#main-aside .home-grid #img-grid img {
+  width: 100%;
+}
+
+#about_us h2:before, #about_us h2:after {
+  content: "";
+  background: #9d0208;
+  border-radius: 10px;
+  height: 5px;
+  display: block;
+}
+
+#about_us p {
+  color: #fff;
+  background-color: #023047;
+  margin-top: 0;
+  padding: 20px 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #ff0;
+  margin: 10px auto 0;
+}
+
+#foot_link {
+  text-align: center;
+  margin-inline: 40px;
+  display: inline-flex;
+}
+
+footer img {
+  border-radius: 10px;
+  width: 30px;
+}
+
+/*# sourceMappingURL=index.c92073ef.css.map */
