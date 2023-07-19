@@ -574,7 +574,116 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"ebWYT":[function(require,module,exports) {
-// Nas App Make stuff
+var _utilsMjs = require("./utils.mjs");
+(0, _utilsMjs.loadHeaderFooter)(); // const name = document.querySelector('#speak').value;
+ // console.log(name);
+ // const {spawn} = require('child_process');
+ // document.getElementById('send_mail').addEventListener('click'() => {
+ //     spawn('node', ['./mail.js']);
+ // });
+
+},{"./utils.mjs":"6Qrgp"}],"6Qrgp":[function(require,module,exports) {
+// wrapper for querySelector...returns matching element
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "qs", ()=>qs);
+// or a more concise version if you are into that sort of thing:
+// export const qs = (selector, parent = document) => parent.querySelector(selector);
+// retrieve data from localstorage
+parcelHelpers.export(exports, "getLocalStorage", ()=>getLocalStorage);
+// save data to local storage
+parcelHelpers.export(exports, "setLocalStorage", ()=>setLocalStorage);
+// set a listener for both touchend and click
+parcelHelpers.export(exports, "setClick", ()=>setClick);
+//Render List
+parcelHelpers.export(exports, "renderListWithTemplate", ()=>renderListWithTemplate);
+parcelHelpers.export(exports, "getParam", ()=>getParam);
+parcelHelpers.export(exports, "renderWithTemplate", ()=>renderWithTemplate);
+parcelHelpers.export(exports, "loadHeaderFooter", ()=>loadHeaderFooter);
+function qs(selector, parent = document) {
+    return parent.querySelector(selector);
+}
+function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+function setLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+function setClick(selector, callback) {
+    qs(selector).addEventListener("touchend", (event)=>{
+        event.preventDefault();
+        callback();
+    });
+    qs(selector).addEventListener("click", callback);
+}
+function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = true) {
+    if (clear) parentElement.innerHTML = "";
+    const htmlString = list.map(templateFn);
+    parentElement.insertAdjacentHTML(position, htmlString.join(""));
+}
+function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const product = urlParams.get(param);
+    return product;
+}
+async function renderWithTemplate(templateFn, parentElement, data, callback, position = "begin", clear = true) {
+    if (clear) parentElement.innerHTML = "";
+    const htmlString = await templateFn(data);
+    parentElement.insertAdjacentHTML(position, htmlString);
+    if (callback) callback(data);
+}
+function loadTemplate(path) {
+    // wait what?  we are returning a new function? this is called currying and can be very helpful.
+    return async function() {
+        const res = await fetch(path);
+        if (res.ok) {
+            const html = await res.text();
+            return html;
+        }
+    };
+}
+async function loadHeaderFooter() {
+    // header template will still be a function! But one where we have pre-supplied the argument.
+    // headerTemplate and footerTemplate will be almost identical, but they will remember the path we passed in when we created them
+    // why is it important that they stay functions?  The renderWithTemplate function is expecting a template function...if we sent it a string it would break, if we changed it to expect a string then it would become less flexible.
+    const headerTemplateFn = loadTemplate("../partials/header.html");
+    const footerTemplateFn = loadTemplate("../partials/footer.html");
+    const headerEl = document.querySelector("#main-header");
+    const footerEl = document.querySelector("#main-footer");
+    renderWithTemplate(headerTemplateFn, headerEl);
+    renderWithTemplate(footerTemplateFn, footerEl);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["j9r0q","ebWYT"], "ebWYT", "parcelRequire20c6")
 

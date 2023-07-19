@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nasxplorer Consult</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="../js/index.js"></script>
 </head>
 <body>
     <div id="content">
         <header>
-            <a href="../index.html" id="logo_link">
-                <img src="../images/nas.jpg" alt="Nasxplorer Logo" class="logo">
-            </a>
-            <nav id="nav_link">
-                <a href="../index.html">Home</a>
-                <a href="#">Student Visa</a>
-                <a href="#">Family & Organization</a>
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <input type="text" name="" id="search_box" placeholder="Search">
-            </nav>
+                <a href="../index.html" id="logo_link">
+                    <img src="../images/nas.jpg" alt="Nasxplorer Logo" class="logo">
+                </a>
+                <nav id="nav_link">
+                    <a href="../index.html">Home</a>
+                    <a href="student_page.html">Student Visa</a>
+                    <a href="./family_page.html">Family & Organization</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact Us</a>
+                    <input type="text" name="" id="search_box" placeholder="Search">
+                </nav>
         </header>
 
         <div id="hero">
@@ -75,19 +76,35 @@
                 <form action="#" method="post">
                     <p>
                         We offer and process educational traveling opportunities to student with different schools across the globe. </p>
-                    <a class='join' href="#">Speak with us today</a>
+                    <a class='join' href="#" id="speak">Speak with us today</a>
                         <div id="aside__box">
-                            <input type="text" name="" id="name" placeholder="Name">
+                            <input type="text" name="name" id="name" placeholder="Name">
                             <input type="text" name="" id="email" placeholder="Email">
-                            <input type="text" name="" id="number" placeholder="Phone number">
+                            <input type="text" name="number" id="number" placeholder="Phone number">
                             <textarea name="feedback" id="text-box" cols="40" rows="10"></textarea>
-                            <button type="submit">Send</button>
+                            <button id="send_mail" onclick="sendM()">Send</button>
                         </div>
                     </form>
                 </section>
             </aside>
-
         </div>
+
+        <footer>
+            <p>Nasexplorer Consult &copy; 2023   - Samuel Jonathan</p>
+            <p><a href="#">Site Plan</a></p>
+            <p><a href="#">Contact Us</a></p>
+            <div class="social">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../images/facebook.png" alt="fb icon">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="../images/twitter.png" alt="twitter icon">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="../images/instagram.png" alt="instagram icon">
+                </a>
+            </div>
+        </footer>
     </div>
 
 </body>

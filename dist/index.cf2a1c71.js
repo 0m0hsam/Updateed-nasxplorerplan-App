@@ -1,0 +1,2 @@
+async function t(t,e,n,a,r="begin",i=!0){i&&(e.innerHTML="");let c=await t(n);e.insertAdjacentHTML(r,c),a&&a(n)}function e(t){return async function(){let e=await fetch(t);if(e.ok){let t=await e.text();return t}}}!async function(){let n=e("../partials/header.html"),a=e("../partials/footer.html"),r=document.querySelector("#main-header"),i=document.querySelector("#main-footer");t(n,r),t(a,i)}();
+//# sourceMappingURL=index.cf2a1c71.js.map
